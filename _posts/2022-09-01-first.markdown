@@ -1,0 +1,20 @@
+---
+layout: post
+title: "이사왔어요"
+date: 2022-09-01 21:03:36 +0530
+categories: Javascript NodeJS
+---
+
+# 제목
+
+velog에서 이사왔어요~!
+
+```javascript
+// 코드코드
+let people = {
+  id: abc,
+  pw: 123,
+};
+```
+
+test test **강조**하기
