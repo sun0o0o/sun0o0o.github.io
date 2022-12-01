@@ -1,0 +1,29 @@
+---
+title: "[Jekyll] 블로그 포스팅 연습"
+excerpt: "입사하고 개인 노션에다가만 적어둔 내용들을 옮겨보자! "
+
+categories:
+  - Blog
+tags:
+  - [Blog, jekyll, Github, Git]
+
+toc: true
+toc_sticky: true
+
+date: 2022-07-01
+last_modified_at: 2022-07-01
+---
+
+# 블로그에 글을 써요!
+
+입사후에 개인노션에만 적어두고 그동안 블로그를 너무 휑하게 두었당..
+
+```javascript
+// 코드코드
+let people = {
+  id: abc,
+  pw: 123,
+};
+```
+
+test test **강조**하기
