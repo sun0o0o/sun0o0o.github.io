@@ -1,6 +1,6 @@
 ---
 title: "[CSS] inline style 변경"
-excerpt: "0706~ 0708 첫 렌더링 최적화"
+excerpt: "inline 스"
 
 categories:
   - CSS
@@ -26,7 +26,7 @@ Jsx는 React.createElement로 변환되고 모든 속성이 props 객체의 일�
 {} === {} //false
 ```
 
-![react image](../assets/images/screenshot1.png)
+<img width="811" alt="screenshot1" src="https://user-images.githubusercontent.com/85756211/205005035-af29179e-b086-4b4a-9670-0c70d2718b08.png">
 
 다시 렌더링 될 때마다 스타일 객체가 다시 계산되어 성능이 저하된다.
 

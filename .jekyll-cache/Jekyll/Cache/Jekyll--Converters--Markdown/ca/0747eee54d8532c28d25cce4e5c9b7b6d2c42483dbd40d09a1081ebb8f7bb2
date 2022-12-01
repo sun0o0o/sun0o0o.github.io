@@ -1,3 +1,4 @@
+I"{
 <h1 id="0706-수">0706 (수)</h1>
 
 <h2 id="ant--design-inline-style로-작성하면-불필요한-렌더링이-일어나는-문제">Ant- design inline-style로 작성하면 불필요한 렌더링이 일어나는 문제</h2>
@@ -9,7 +10,7 @@
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{}</span> <span class="o">===</span> <span class="p">{}</span> <span class="c1">//false</span>
 </code></pre></div></div>
 
-<p><img width="811" alt="screenshot1" src="https://user-images.githubusercontent.com/85756211/205005035-af29179e-b086-4b4a-9670-0c70d2718b08.png" /></p>
+<p><img src="../assets/images/screenshot1.png" width="100px" height="50px" title="Github_Logo" /></p>
 
 <p>다시 렌더링 될 때마다 스타일 객체가 다시 계산되어 성능이 저하된다.</p>
 
@@ -39,3 +40,4 @@ color : 빨강빨강;
 <h3 id="참고">참고</h3>
 
 <p><a href="https://studioplug.tistory.com/375">react로 ant design 시작하기</a></p>
+:ET
