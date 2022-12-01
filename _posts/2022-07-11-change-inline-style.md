@@ -1,6 +1,6 @@
 ---
 title: "[CSS] inline style 변경"
-excerpt: "inline 스"
+excerpt: "코드 작성시 inline 스타일링을 지양해야하는 이유"
 
 categories:
   - CSS

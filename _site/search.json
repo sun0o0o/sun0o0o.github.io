@@ -1,6 +1,18 @@
 [
   
     {
+      "title"    : "[JavaScript] debounce,throttling",
+      "title-lower"    : "[javascript] debounce,throttling",
+      "sub-titile" : "",
+      "sub-titile-lower" : "",
+      "categories" : "JavaScript",
+      "tags"     : "React, CSS, javascript, Github, Git",
+      "url"      : "/javascript/2022/07/11/practice-debouce-and-throttling.html",
+      "date"     : "2022-07-11 00:00:00 +0900",
+      "content"     : "0711 Git commit 계정 바꾸기git log로 보니 내가 남긴 커밋이 다른 분 계정으로 설정되어 있었다커밋만 했을 경우에 author를 바꾸는 방법과push까지 한 후에 author를 바꾸는 방법이 다른데, 다행히 나는 커밋 직후에 바꾸었다git commit --amend --author=&quot;이름 &amp;lt;이메일&amp;gt;&q..."
+    } ,
+  
+    {
       "title"    : "[CSS] inline style 변경",
       "title-lower"    : "[css] inline style 변경",
       "sub-titile" : "",
@@ -22,18 +34,6 @@
       "url"      : "/react/2022/07/08/oprimize-rendering.html",
       "date"     : "2022-07-08 00:00:00 +0900",
       "content"     : "0706 (수)컴포넌트가 렌더링 된다는 것은 누군가 그 함수(컴포넌트)를 호출해서 실행하는 것을 말한다.컴포넌트가 리렌더링되는 경우  자신의 state가 변경될 떄  부모에게서 받는 props가 변경될 때  부모 컴포넌트가 변경될 때  forceUpdate()가 호출될 때0707 (목)React.memo는 state의 변화는 알아차리지 못함, Prop..."
-    } ,
-  
-    {
-      "title"    : "[Jekyll] 블로그 포스팅 연습",
-      "title-lower"    : "[jekyll] 블로그 포스팅 연습",
-      "sub-titile" : "",
-      "sub-titile-lower" : "",
-      "categories" : "Blog",
-      "tags"     : "Blog, jekyll, Github, Git",
-      "url"      : "/blog/2022/07/01/first.html",
-      "date"     : "2022-07-01 00:00:00 +0900",
-      "content"     : "블로그에 글을 써요!입사후에 개인노션에만 적어두고 그동안 블로그를 너무 휑하게 두었당..// 코드코드let people = {  id: abc,  pw: 123,};test test 강조하기"
     } ,
   
     {
