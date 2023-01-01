@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "[JavaScript] debounce,throttling"
 excerpt: "debounce와 throttling을 연습해보자!"
 

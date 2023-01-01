@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "[React] 렌더링 최적화"
 excerpt: "0706~ 0708 첫 렌더링 최적화"
 
