@@ -1,0 +1,45 @@
+I"�<center><img width="70" alt="스크린샷 2022-10-14 오후 2 36 33" src="https://user-images.githubusercontent.com/85756211/212245770-bf99fe14-ab73-41ed-800d-cec7899ecc0d.png" /></center>
+<center><img width="70" alt="스크린샷 2022-10-14 오후 2 36 33" src="https://user-images.githubusercontent.com/85756211/212245782-28876b94-b930-436c-90c9-07597d772664.png" /></center>
+<p>검은 history 아이콘을 hover시에 파란 history 아이콘으로 변경시키는 작업 ㅇuㅇ</p>
+
+<p>평소에 자주 써보기도하고 한번도 어려움을 겪어본 적이 없는데 당황했다.</p>
+
+<h3 id="회색-이미지만-적용되어있던-처음-코드">회색 이미지만 적용되어있던 처음 코드</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nc">Icon</span> <span class="na">src</span><span class="p">=</span><span class="si">{</span><span class="nx">검정아이콘</span><span class="si">}</span><span class="p">&gt;&lt;/</span><span class="nc">Icon</span><span class="p">&gt;;</span>
+
+<span class="kd">const</span> <span class="nx">Icon</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">.</span><span class="nx">img</span><span class="s2">`
+  어쩌구: 저쩌구;
+`</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>이때는 width값만 주고 height값을 안주기도 했고</p>
+
+<p>hover시에 src를 바꿔주면 되겠다고 생각했었다.</p>
+
+<p>하지만 구글링해보니 css를 이용해서 src를 바꾸는 방법은 없었다.</p>
+
+<h3 id="변경한-코드">변경한 코드</h3>
+
+<p>img 태그를 div로 바꾸어주고 hover될 때에는 background url을 바꾸어 주었다.</p>
+
+<p>이때에도 <code class="language-plaintext highlighter-rouge">background-size:cover</code> 를 안적으면 사진이 div에 딱 맞게 꽉 들어차지가 않기 때문에</p>
+
+<p>꼭 작성해 주어야 한다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nc">Icon</span><span class="p">&gt;&lt;/</span><span class="nc">Icon</span><span class="p">&gt;;</span>
+
+<span class="kd">const</span> <span class="nx">Icon</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">.</span><span class="nx">div</span><span class="s2">`
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background:url(</span><span class="p">${</span><span class="nx">검정아이콘</span><span class="p">}</span><span class="s2">) &amp;:hover {
+    background: url(</span><span class="p">${</span><span class="nx">파란아이콘</span><span class="p">}</span><span class="s2">);
+    background-size: cover;
+    cursor: pointer;
+  }
+`</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><a href="http://daplus.net/html-css-img-hover%EC%97%90%EC%84%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-src-%EB%B3%80%EA%B2%BD/">참고</a></p>
+:ET

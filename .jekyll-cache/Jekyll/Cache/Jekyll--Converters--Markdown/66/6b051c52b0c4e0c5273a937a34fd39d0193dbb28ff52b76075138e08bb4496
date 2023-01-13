@@ -1,0 +1,12 @@
+I"<h3 id="vs-code에서-type-script-서버-재시작">📌VS code에서 type script 서버 재시작</h3>
+
+<p>cmd + shift + p → restart ts server</p>
+
+<h3 id="데코레이터는-어떻게-타입을-지정해야하나-ㅎㅎ">📌데코레이터는 어떻게 타입을 지정해야하나 ㅎㅎ</h3>
+
+<p>decorator는 class, class내부에서만 사용할 수 있다.</p>
+
+<p>decorator는 class, class내부의 property,accessor,method,parameter에 사용할 수 있다</p>
+
+<p>아 ㅇ_ㅇ 이럴수가 이럴수가 이럴수가?!?!?!??!</p>
+:ET

@@ -1,0 +1,47 @@
+I"�<p>나의 멘탈을 탈탈 깨부셔버리는 도저히 이해가 안되는 코드가 생겼다.. 😬</p>
+
+<p>같은 코드가 forEach문 밖에서는 정규 표현식이 true가 나오는데</p>
+
+<p>forEach문 안에서는 false가 나오는 기이한 현상을 발견했다.</p>
+
+<h3 id="문제의-코드">문제의 코드</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const { pathname, state } = useLocation();
+
+  let fullPath = pathname;
+  const regexExp =
+    /^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$/gi;
+  let routes = [];
+  let splitedPathArray = fullPath.split("/");
+
+  let arr = [];
+
+  splitedPathArray.forEach((el, idx) =&gt; {
+    const result = regexExp.test(el);
+    // console.log("regexExp.test(el) = ", el, regexExp.test(el));
+    regexExp.lastIndex = 0;   // &lt;- 이 부분이 꼭 필요하다!!!
+    if (result) {
+      console.log("돌아가는 구역", el, idx);
+    } else {
+      console.log("통과 못하는 구역", el, idx);
+      arr.push(el);
+    }
+  });
+</code></pre></div></div>
+
+<h2 id="원인과-해결-방법">원인과 해결 방법</h2>
+
+<p>이 문제는 정규표현식 <code class="language-plaintext highlighter-rouge">g</code> 플래그(flag)를 달았을 때 발생하는 문제다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">g</code> 플래그를 빼면 해결된다.</p>
+
+<p>정규 표현식의 g플래그는 표현식을 만족하는 하나 이상의 값을 찾는다. <strong>문자열에서 일치하는 값을 갖게된 시점의 포지션(lastIndex)을 기억</strong>하고 있고, 다음 검증 시 해당 인덱스에서부터 검색을 시작한다.</p>
+
+<p>그래서 단순하게 여러 문자열을 하나씩 정규식을 통해 검증하려면 <code class="language-plaintext highlighter-rouge">g</code> 플래그를 사용하지 않아야한다.</p>
+
+<p>아니면 매 과정마다 lastIndex를 0으로 초기화하면 된다.</p>
+
+<p>그러면 매번 처음 문자열의 포지션부터 검색을 수행하기 때문에 원하는 결과를 얻을 수 있다.</p>
+
+<p><a href="'https://jootc.com/p/202112103833'">참고</a></p>
+:ET

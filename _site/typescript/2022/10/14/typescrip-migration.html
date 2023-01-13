@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<title>[TypeScript] javascript 프로젝트 typescript 마이그레이션</title>
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>[TypeScript] javascript 프로젝트 typescript 마이그레이션 | sun0o0o’s Tech Blog</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="[TypeScript] javascript 프로젝트 typescript 마이그레이션" />
+<meta name="author" content="sun0o0o" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="javascript 프로젝트 typescript 마이그레이션" />
+<meta property="og:description" content="javascript 프로젝트 typescript 마이그레이션" />
+<link rel="canonical" href="http://localhost:4000/typescript/2022/10/14/typescrip-migration.html" />
+<meta property="og:url" content="http://localhost:4000/typescript/2022/10/14/typescrip-migration.html" />
+<meta property="og:site_name" content="sun0o0o’s Tech Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-14T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="[TypeScript] javascript 프로젝트 typescript 마이그레이션" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"sun0o0o"},"dateModified":"2022-10-14T00:00:00+09:00","datePublished":"2022-10-14T00:00:00+09:00","description":"javascript 프로젝트 typescript 마이그레이션","headline":"[TypeScript] javascript 프로젝트 typescript 마이그레이션","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/typescript/2022/10/14/typescrip-migration.html"},"url":"http://localhost:4000/typescript/2022/10/14/typescrip-migration.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<script type="text/javascript" src="/assets/js/darkmode.js"></script>
+
+</head><body>
+  <main class="container">
+    <section class="about">
+      <div class="about-header condensed">
+      <div class="about-title">
+      <a href="/">
+        
+        <img src="/../assets/images/chunbae1.png" alt="sun0o0o" />
+        
+      </a>
+      <h2 id="title">
+        <a href="/">sun0o0o</a>
+      </h2>
+      </div><p class="tagline">Front-end Developer</p></div>
+      
+      <ul class="social about-footer condensed"><a href="https://github.com/sun0o0o" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a><a href="https://www.linkedin.com/in/samarsault" target="_blank">
+          <li>
+            <i class="icon-linkedin-squared"></i>
+          </li>
+        </a><a href="https://twitter.com/samarsault" target="_blank">
+          <li>
+            <i class="icon-twitter-squared"></i>
+          </li>
+        </a></ul><p class="about-footer condensed">&copy;
+        2023</p><div class="about-footer condensed">
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div>
+    </section>
+    <section class="content">
+      <div class="post-container">
+  <a class="post-link" href="/typescript/2022/10/14/typescrip-migration.html">
+    <h2 class="post-title">[TypeScript] javascript 프로젝트 typescript 마이그레이션</h2>
+  </a>
+  <div class="post-meta">
+    <div class="post-date"><i class="icon-calendar"></i>Oct 14, 2022</div><ul class="post-categories"><li>TypeScript</li></ul></div>
+  <div class="post">
+    <h3 id="package-download">📌 package download</h3>
+
+<p>기존 js프로젝트에서 ts를 추가하는 경우 설치해주어야 한다</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="o">--</span><span class="nx">save</span> <span class="nx">typescript</span> <span class="p">@</span><span class="nd">types</span><span class="sr">/node @types/</span><span class="nx">react</span> <span class="p">@</span><span class="nd">types</span><span class="sr">/react-dom @types/</span><span class="nx">jest</span>
+</code></pre></div></div>
+
+<ul>
+  <li>typescript</li>
+</ul>
+
+<p>타입스크립트 파일을 js파일로 컴파일할 수 있도록 만드는 컴파일러</p>
+
+<ul>
+  <li>@types/node</li>
+</ul>
+
+<p>node에서 typescript를 사용할 때 모든 유형 정의를 로드할 때 사용한다</p>
+
+<p>typescript 2.x이상 버전에서는 필수로 사용한다</p>
+
+<ul>
+  <li>@types/react</li>
+</ul>
+
+<p>react에서 typescript를 사용할 때 모든 유형 정의를 로드할 때 사용한다</p>
+
+<p><code class="language-plaintext highlighter-rouge">types/react-dom, types/jest</code> 등 패키지도 같은 이유로 사용한다.</p>
+
+<h3 id="tsconfigjson">📌 tsconfig.json</h3>
+
+<p>위 명령어를 사용해서 패키지를 설치한 후에는</p>
+
+<p>tsconfig.json을 만들어 주어야한다.</p>
+
+<p>tsconfig.json파일이 위치한 디렉토리는 ts프로젝트의 <strong>루트 디렉토리</strong>가 된다.</p>
+
+<p>타입스크립트는 자바스크립트로 컴파일하는 과정이 필요한데, tsconfig.json 파일을 어떻게 js로 컴파일할지 설명해주는 역할을 한다.</p>
+
+<p><a href="https://www.typescriptlang.org/docs/handbook/tsconfig-json.html">Documentation - What is a tsconfig.json</a></p>
+
+<p>이제 app.js와 index.js를 ts로 바꿔주면 index.ts에서 에러가 난다</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Property</span> <span class="dl">'</span><span class="s1">createRoot</span><span class="dl">'</span> <span class="nx">does</span> <span class="nx">not</span> <span class="nx">exist</span> <span class="nx">on</span> <span class="nx">type</span> <span class="dl">'</span><span class="s1">typeof
+import("/code/my-app/node_modules/@types/react-dom/index")</span><span class="dl">'</span><span class="p">.</span> <span class="nx">TS2339</span>
+</code></pre></div></div>
+
+<p>이런 에러가 나는데, createRoot라는 속성이 없기 때문에 나는 에러이다.</p>
+
+<p>root를</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">root</span> <span class="o">=</span> <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">createRoot</span><span class="p">(</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">root</span><span class="dl">"</span><span class="p">)</span> <span class="k">as</span> <span class="nx">HTMLElement</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p>이렇게 변경해주면 HTMLElement라는 type이 정해졌기 때문에 오류가 해결된다.</p>
+
+<p>이제 나머지 js파일들을 ts로 바꾸어주면서 생기는 타입 에러들을 타입을 명시해주면서 하나하나 해결해나가면</p>
+
+<p>ts 프로젝트로 변경시킬 수 있다! 💪</p>
+
+<h2 id="참고">참고</h2>
+
+<p><a href="https://codermun-log.tistory.com/m/599">React 프로젝트 JS -&gt; TS로 변환하기</a></p>
+
+<p><a href="https://joshua1988.github.io/ts/etc/convert-js-to-ts.html#%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%BD%94%EB%93%9C%EC%97%90-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A5%BC-%EC%A0%81%EC%9A%A9%ED%95%A0-%EB%95%8C-%EC%A3%BC%EC%9D%98%ED%95%B4%EC%95%BC-%ED%95%A0-%EC%A0%90">JS에 TS 적용하기</a></p>
+
+  </div></div>
+
+    </section>
+    <footer class="condensed">
+      <ul class="social about-footer condensed"><a href="https://github.com/sun0o0o" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a><a href="https://www.linkedin.com/in/samarsault" target="_blank">
+          <li>
+            <i class="icon-linkedin-squared"></i>
+          </li>
+        </a><a href="https://twitter.com/samarsault" target="_blank">
+          <li>
+            <i class="icon-twitter-squared"></i>
+          </li>
+        </a></ul><p class="about-footer condensed">&copy;
+        2023</p><div class="about-footer condensed">
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div>
+    </footer>
+  </main>
+  
+  <script type="text/javascript" src="/assets/js/darkmode.js"></script>
+  
+  <script src="/assets/js/simple-jekyll-search.min.js"></script>
+  <script src="/assets/js/search.js"></script>
+  
+</body>
+
+</html>

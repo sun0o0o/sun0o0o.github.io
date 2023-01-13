@@ -358,11 +358,11 @@ green     #859900  operators, other keywords
 .highlight .il { color: #2aa198; }
 
 /* Literal.Number.Integer.Long */
-.highlight { background-color: #f4f4f4; }
+.highlight, code { background-color: #f4f4f4; }
 
 div.highlight { padding: 5px 20px; }
 
-pre.highlight, code { font-family: 'Consolas', Menlo, monospace; line-height: 1.4em; tab-size: 4; }
+pre.highlight, code { font-family: "Consolas", Menlo, monospace; line-height: 1.4em; tab-size: 4; }
 
 *, *:before, *:after { box-sizing: border-box; }
 

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<title>[Javascript] &&연산자와 optional chaining</title>
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>[Javascript] &amp;&amp;연산자와 optional chaining | sun0o0o’s Tech Blog</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="[Javascript] &amp;&amp;연산자와 optional chaining" />
+<meta name="author" content="sun0o0o" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="&amp;&amp;연산자와 optional chaining" />
+<meta property="og:description" content="&amp;&amp;연산자와 optional chaining" />
+<link rel="canonical" href="http://localhost:4000/javascript/2022/09/01/operator.html" />
+<meta property="og:url" content="http://localhost:4000/javascript/2022/09/01/operator.html" />
+<meta property="og:site_name" content="sun0o0o’s Tech Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-09-01T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="[Javascript] &amp;&amp;연산자와 optional chaining" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"sun0o0o"},"dateModified":"2022-09-01T00:00:00+09:00","datePublished":"2022-09-01T00:00:00+09:00","description":"&amp;&amp;연산자와 optional chaining","headline":"[Javascript] &amp;&amp;연산자와 optional chaining","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/javascript/2022/09/01/operator.html"},"url":"http://localhost:4000/javascript/2022/09/01/operator.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<script type="text/javascript" src="/assets/js/darkmode.js"></script>
+
+</head><body>
+  <main class="container">
+    <section class="about">
+      <div class="about-header condensed">
+      <div class="about-title">
+      <a href="/">
+        
+        <img src="/../assets/images/chunbae1.png" alt="sun0o0o" />
+        
+      </a>
+      <h2 id="title">
+        <a href="/">sun0o0o</a>
+      </h2>
+      </div><p class="tagline">Front-end Developer</p></div>
+      
+      <ul class="social about-footer condensed"><a href="https://github.com/sun0o0o" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a><a href="https://www.linkedin.com/in/samarsault" target="_blank">
+          <li>
+            <i class="icon-linkedin-squared"></i>
+          </li>
+        </a><a href="https://twitter.com/samarsault" target="_blank">
+          <li>
+            <i class="icon-twitter-squared"></i>
+          </li>
+        </a></ul><p class="about-footer condensed">&copy;
+        2023</p><div class="about-footer condensed">
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div>
+    </section>
+    <section class="content">
+      <div class="post-container">
+  <a class="post-link" href="/javascript/2022/09/01/operator.html">
+    <h2 class="post-title">[Javascript] &amp;&amp;연산자와 optional chaining</h2>
+  </a>
+  <div class="post-meta">
+    <div class="post-date"><i class="icon-calendar"></i>Sep 1, 2022</div><ul class="post-categories"><li>JavaScript</li></ul></div>
+  <div class="post">
+    <h3 id="type-error">Type error</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">can</span> <span class="nx">not</span> <span class="nx">read</span> <span class="nx">properties</span> <span class="k">of</span> <span class="kc">undefined</span> <span class="p">(</span><span class="nx">reading</span> <span class="nx">map</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>난 optional chaining을 써서</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="nx">dnsInfo</span><span class="p">?.</span><span class="nx">map</span><span class="p">((</span><span class="nx">info</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">뭐시기</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이렇게 코드를 썼는데</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="nx">dnsInfo</span> <span class="o">&amp;&amp;</span> <span class="nx">dnsInfo</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">info</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">뭐시기</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>&amp;&amp;연산자를 썼더니 type error가 해결이 되었다.</p>
+
+<p>optional chaining과 &amp;&amp;연산자의 역할은 같아보이는데 왜 &amp;&amp;연산자의 사용으로 type error가 해결이 된걸까?</p>
+
+<p>null이나 undefined가 들어오면 리턴값이 undefined이다</p>
+
+<p><code class="language-plaintext highlighter-rouge">obj?.prop</code> – <code class="language-plaintext highlighter-rouge">obj</code>가 존재하면 <code class="language-plaintext highlighter-rouge">obj.prop</code>을 반환하고, 그렇지 않으면 <code class="language-plaintext highlighter-rouge">undefined</code>를 반환한다.</p>
+
+  </div></div>
+
+    </section>
+    <footer class="condensed">
+      <ul class="social about-footer condensed"><a href="https://github.com/sun0o0o" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a><a href="https://www.linkedin.com/in/samarsault" target="_blank">
+          <li>
+            <i class="icon-linkedin-squared"></i>
+          </li>
+        </a><a href="https://twitter.com/samarsault" target="_blank">
+          <li>
+            <i class="icon-twitter-squared"></i>
+          </li>
+        </a></ul><p class="about-footer condensed">&copy;
+        2023</p><div class="about-footer condensed">
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div>
+    </footer>
+  </main>
+  
+  <script type="text/javascript" src="/assets/js/darkmode.js"></script>
+  
+  <script src="/assets/js/simple-jekyll-search.min.js"></script>
+  <script src="/assets/js/search.js"></script>
+  
+</body>
+
+</html>

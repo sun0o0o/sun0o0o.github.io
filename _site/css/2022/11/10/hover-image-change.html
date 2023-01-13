@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<title>[CSS] hover시 이미지 변경 issue</title>
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>[CSS] hover시 이미지 변경 issue | sun0o0o’s Tech Blog</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="[CSS] hover시 이미지 변경 issue" />
+<meta name="author" content="sun0o0o" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="CSS hover시 이미지 변경" />
+<meta property="og:description" content="CSS hover시 이미지 변경" />
+<link rel="canonical" href="http://localhost:4000/css/2022/11/10/hover-image-change.html" />
+<meta property="og:url" content="http://localhost:4000/css/2022/11/10/hover-image-change.html" />
+<meta property="og:site_name" content="sun0o0o’s Tech Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-11-10T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="[CSS] hover시 이미지 변경 issue" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"sun0o0o"},"dateModified":"2022-11-10T00:00:00+09:00","datePublished":"2022-11-10T00:00:00+09:00","description":"CSS hover시 이미지 변경","headline":"[CSS] hover시 이미지 변경 issue","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/css/2022/11/10/hover-image-change.html"},"url":"http://localhost:4000/css/2022/11/10/hover-image-change.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<script type="text/javascript" src="/assets/js/darkmode.js"></script>
+
+</head><body>
+  <main class="container">
+    <section class="about">
+      <div class="about-header condensed">
+      <div class="about-title">
+      <a href="/">
+        
+        <img src="/../assets/images/chunbae1.png" alt="sun0o0o" />
+        
+      </a>
+      <h2 id="title">
+        <a href="/">sun0o0o</a>
+      </h2>
+      </div><p class="tagline">Front-end Developer</p></div>
+      
+      <ul class="social about-footer condensed"><a href="https://github.com/sun0o0o" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a><a href="https://www.linkedin.com/in/samarsault" target="_blank">
+          <li>
+            <i class="icon-linkedin-squared"></i>
+          </li>
+        </a><a href="https://twitter.com/samarsault" target="_blank">
+          <li>
+            <i class="icon-twitter-squared"></i>
+          </li>
+        </a></ul><p class="about-footer condensed">&copy;
+        2023</p><div class="about-footer condensed">
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div>
+    </section>
+    <section class="content">
+      <div class="post-container">
+  <a class="post-link" href="/css/2022/11/10/hover-image-change.html">
+    <h2 class="post-title">[CSS] hover시 이미지 변경 issue</h2>
+  </a>
+  <div class="post-meta">
+    <div class="post-date"><i class="icon-calendar"></i>Nov 10, 2022</div><ul class="post-categories"><li>CSS</li></ul></div>
+  <div class="post">
+    <center><img width="70" alt="스크린샷 2022-10-14 오후 2 36 33" src="https://user-images.githubusercontent.com/85756211/212245770-bf99fe14-ab73-41ed-800d-cec7899ecc0d.png" /></center>
+<center><img width="70" alt="스크린샷 2022-10-14 오후 2 36 33" src="https://user-images.githubusercontent.com/85756211/212245782-28876b94-b930-436c-90c9-07597d772664.png" /></center>
+<p>검은 history 아이콘을 hover시에 파란 history 아이콘으로 변경시키는 작업 ㅇuㅇ</p>
+
+<p>평소에 자주 써보기도하고 한번도 어려움을 겪어본 적이 없는데 당황했다.</p>
+
+<h3 id="회색-이미지만-적용되어있던-처음-코드">회색 이미지만 적용되어있던 처음 코드</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nc">Icon</span> <span class="na">src</span><span class="p">=</span><span class="si">{</span><span class="nx">검정아이콘</span><span class="si">}</span><span class="p">&gt;&lt;/</span><span class="nc">Icon</span><span class="p">&gt;;</span>
+
+<span class="kd">const</span> <span class="nx">Icon</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">.</span><span class="nx">img</span><span class="s2">`
+  어쩌구: 저쩌구;
+`</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>이때는 width값만 주고 height값을 안주기도 했고</p>
+
+<p>hover시에 src를 바꿔주면 되겠다고 생각했었다.</p>
+
+<p>하지만 구글링해보니 css를 이용해서 src를 바꾸는 방법은 없었다.</p>
+
+<h3 id="변경한-코드">변경한 코드</h3>
+
+<p>img 태그를 div로 바꾸어주고 hover될 때에는 background url을 바꾸어 주었다.</p>
+
+<p>이때에도 <code class="language-plaintext highlighter-rouge">background-size:cover</code> 를 안적으면 사진이 div에 딱 맞게 꽉 들어차지가 않기 때문에</p>
+
+<p>꼭 작성해 주어야 한다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nc">Icon</span><span class="p">&gt;&lt;/</span><span class="nc">Icon</span><span class="p">&gt;;</span>
+
+<span class="kd">const</span> <span class="nx">Icon</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">.</span><span class="nx">div</span><span class="s2">`
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background:url(</span><span class="p">${</span><span class="nx">검정아이콘</span><span class="p">}</span><span class="s2">) &amp;:hover {
+    background: url(</span><span class="p">${</span><span class="nx">파란아이콘</span><span class="p">}</span><span class="s2">);
+    background-size: cover;
+    cursor: pointer;
+  }
+`</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><a href="http://daplus.net/html-css-img-hover%EC%97%90%EC%84%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-src-%EB%B3%80%EA%B2%BD/">참고</a></p>
+
+  </div></div>
+
+    </section>
+    <footer class="condensed">
+      <ul class="social about-footer condensed"><a href="https://github.com/sun0o0o" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a><a href="https://www.linkedin.com/in/samarsault" target="_blank">
+          <li>
+            <i class="icon-linkedin-squared"></i>
+          </li>
+        </a><a href="https://twitter.com/samarsault" target="_blank">
+          <li>
+            <i class="icon-twitter-squared"></i>
+          </li>
+        </a></ul><p class="about-footer condensed">&copy;
+        2023</p><div class="about-footer condensed">
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div>
+    </footer>
+  </main>
+  
+  <script type="text/javascript" src="/assets/js/darkmode.js"></script>
+  
+  <script src="/assets/js/simple-jekyll-search.min.js"></script>
+  <script src="/assets/js/search.js"></script>
+  
+</body>
+
+</html>

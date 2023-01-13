@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<title>[TypeScript] error handling</title>
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>[TypeScript] error handling | sun0o0o’s Tech Blog</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="[TypeScript] error handling" />
+<meta name="author" content="sun0o0o" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="typeScript error handling" />
+<meta property="og:description" content="typeScript error handling" />
+<link rel="canonical" href="http://localhost:4000/typescript/2022/10/16/typescript-error-handling.html" />
+<meta property="og:url" content="http://localhost:4000/typescript/2022/10/16/typescript-error-handling.html" />
+<meta property="og:site_name" content="sun0o0o’s Tech Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-16T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="[TypeScript] error handling" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"sun0o0o"},"dateModified":"2022-10-16T00:00:00+09:00","datePublished":"2022-10-16T00:00:00+09:00","description":"typeScript error handling","headline":"[TypeScript] error handling","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/typescript/2022/10/16/typescript-error-handling.html"},"url":"http://localhost:4000/typescript/2022/10/16/typescript-error-handling.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<script type="text/javascript" src="/assets/js/darkmode.js"></script>
+
+</head><body>
+  <main class="container">
+    <section class="about">
+      <div class="about-header condensed">
+      <div class="about-title">
+      <a href="/">
+        
+        <img src="/../assets/images/chunbae1.png" alt="sun0o0o" />
+        
+      </a>
+      <h2 id="title">
+        <a href="/">sun0o0o</a>
+      </h2>
+      </div><p class="tagline">Front-end Developer</p></div>
+      
+      <ul class="social about-footer condensed"><a href="https://github.com/sun0o0o" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a><a href="https://www.linkedin.com/in/samarsault" target="_blank">
+          <li>
+            <i class="icon-linkedin-squared"></i>
+          </li>
+        </a><a href="https://twitter.com/samarsault" target="_blank">
+          <li>
+            <i class="icon-twitter-squared"></i>
+          </li>
+        </a></ul><p class="about-footer condensed">&copy;
+        2023</p><div class="about-footer condensed">
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div>
+    </section>
+    <section class="content">
+      <div class="post-container">
+  <a class="post-link" href="/typescript/2022/10/16/typescript-error-handling.html">
+    <h2 class="post-title">[TypeScript] error handling</h2>
+  </a>
+  <div class="post-meta">
+    <div class="post-date"><i class="icon-calendar"></i>Oct 16, 2022</div><ul class="post-categories"><li>TypeScript</li></ul></div>
+  <div class="post">
+    <h3 id="vs-code에서-type-script-서버-재시작">📌VS code에서 type script 서버 재시작</h3>
+
+<p>cmd + shift + p → restart ts server</p>
+
+<h3 id="데코레이터는-어떻게-타입을-지정해야하나-ㅎㅎ">📌데코레이터는 어떻게 타입을 지정해야하나 ㅎㅎ</h3>
+
+<p>decorator는 class, class내부에서만 사용할 수 있다.</p>
+
+<p>decorator는 class, class내부의 property,accessor,method,parameter에 사용할 수 있다</p>
+
+<p>아 ㅇ_ㅇ 이럴수가 이럴수가 이럴수가?!?!?!??!</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">arr</span> <span class="p">{</span>
+  <span class="nx">id</span><span class="p">?:</span> <span class="nx">number</span><span class="p">;</span>
+  <span class="nx">status</span><span class="p">?:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="dl">"</span><span class="s2">@timestamp</span><span class="dl">"</span><span class="p">?:</span> <span class="nx">string</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>그냥 문법 문제였다 ㅎㅎ..</p>
+
+<p><a href="https://bobbyhadz.com/blog/typescript-property-or-signature-expected">참고</a></p>
+
+<h3 id="error의-type은-뭘까">📌Error의 type은 뭘까?</h3>
+
+<center><img width="791" alt="스크린샷 2022-10-14 오후 2 36 33" src="https://user-images.githubusercontent.com/85756211/212241995-9ad1778f-b161-4885-b49f-47ac3dd25bf8.png" /></center>
+<p>Object라고 하는데 ㅎㅎ..
+<code class="language-plaintext highlighter-rouge">const [error, setError] = useState&lt;Object | null&gt;(null)</code> 를 쓰니까 null에러는 없어졌다.</p>
+<center><img width="200" alt="스크린샷 2022-10-14 오후 2 39 52" src="https://user-images.githubusercontent.com/85756211/212242099-9d5324c4-f98e-4eae-ac05-4685b2c90e65.png" /></center>
+<p>unknown은 에러가 나는 함수부분의 parameter에 type을 지정 안해줘서 일어난 에러였다</p>
+
+<p>catch문 안에서의 parameter엔 any나 unknown type만이 들어갈 수 있다고 한다. 터미널피셜이다 ㅎ</p>
+
+<h2 id="variable-inputarguments-is-used-before-assigned">📌Variable inputArguments is used before assigned</h2>
+
+<p>난 분명 선언을 했는데 왜 선언을 안했다고 나오는걸까? 🤷🏻‍♀️</p>
+
+<p>→ null이 아님을 명시해주어야 하기 때문이다. 처음 선언부분에 <code class="language-plaintext highlighter-rouge">!</code> 하나를 붙였더니 해결됐다 😣</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let inputArguments!: string | obj2;
+</code></pre></div></div>
+
+<p><a href="'https://lightrun.com/answers/microsoft-typescript-variable-is-used-before-being-assigned-even-though-it-is-assigned'">variable is used before being assigned even though it is assigned</a></p>
+
+  </div></div>
+
+    </section>
+    <footer class="condensed">
+      <ul class="social about-footer condensed"><a href="https://github.com/sun0o0o" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a><a href="https://www.linkedin.com/in/samarsault" target="_blank">
+          <li>
+            <i class="icon-linkedin-squared"></i>
+          </li>
+        </a><a href="https://twitter.com/samarsault" target="_blank">
+          <li>
+            <i class="icon-twitter-squared"></i>
+          </li>
+        </a></ul><p class="about-footer condensed">&copy;
+        2023</p><div class="about-footer condensed">
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div>
+    </footer>
+  </main>
+  
+  <script type="text/javascript" src="/assets/js/darkmode.js"></script>
+  
+  <script src="/assets/js/simple-jekyll-search.min.js"></script>
+  <script src="/assets/js/search.js"></script>
+  
+</body>
+
+</html>

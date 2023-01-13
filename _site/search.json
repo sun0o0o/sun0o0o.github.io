@@ -1,6 +1,66 @@
 [
   
     {
+      "title"    : "[JavaScript] 정규표현식 test 결과 에러",
+      "title-lower"    : "[javascript] 정규표현식 test 결과 에러",
+      "sub-titile" : "",
+      "sub-titile-lower" : "",
+      "categories" : "JavaScript",
+      "tags"     : "JavaScript",
+      "url"      : "/javascript/2022/12/06/regex-error.html",
+      "date"     : "2022-12-06 00:00:00 +0900",
+      "content"     : "나의 멘탈을 탈탈 깨부셔버리는 도저히 이해가 안되는 코드가 생겼다.. 😬같은 코드가 forEach문 밖에서는 정규 표현식이 true가 나오는데forEach문 안에서는 false가 나오는 기이한 현상을 발견했다.문제의 코드const { pathname, state } = useLocation();  let fullPath = pathname;  cons..."
+    } ,
+  
+    {
+      "title"    : "[CSS] hover시 이미지 변경 issue",
+      "title-lower"    : "[css] hover시 이미지 변경 issue",
+      "sub-titile" : "",
+      "sub-titile-lower" : "",
+      "categories" : "CSS",
+      "tags"     : "CSS",
+      "url"      : "/css/2022/11/10/hover-image-change.html",
+      "date"     : "2022-11-10 00:00:00 +0900",
+      "content"     : "검은 history 아이콘을 hover시에 파란 history 아이콘으로 변경시키는 작업 ㅇuㅇ평소에 자주 써보기도하고 한번도 어려움을 겪어본 적이 없는데 당황했다.회색 이미지만 적용되어있던 처음 코드&amp;lt;Icon src={검정아이콘}&amp;gt;&amp;lt;/Icon&amp;gt;;const Icon = styled.img`  어쩌구: ..."
+    } ,
+  
+    {
+      "title"    : "[TypeScript] error handling",
+      "title-lower"    : "[typescript] error handling",
+      "sub-titile" : "",
+      "sub-titile-lower" : "",
+      "categories" : "TypeScript",
+      "tags"     : "TypeScript, JavaScript",
+      "url"      : "/typescript/2022/10/16/typescript-error-handling.html",
+      "date"     : "2022-10-16 00:00:00 +0900",
+      "content"     : "📌VS code에서 type script 서버 재시작cmd + shift + p → restart ts server📌데코레이터는 어떻게 타입을 지정해야하나 ㅎㅎdecorator는 class, class내부에서만 사용할 수 있다.decorator는 class, class내부의 property,accessor,method,parameter에 사용할 수 있..."
+    } ,
+  
+    {
+      "title"    : "[TypeScript] javascript 프로젝트 typescript 마이그레이션",
+      "title-lower"    : "[typescript] javascript 프로젝트 typescript 마이그레이션",
+      "sub-titile" : "",
+      "sub-titile-lower" : "",
+      "categories" : "TypeScript",
+      "tags"     : "TypeScript, JavaScript",
+      "url"      : "/typescript/2022/10/14/typescrip-migration.html",
+      "date"     : "2022-10-14 00:00:00 +0900",
+      "content"     : "📌 package download기존 js프로젝트에서 ts를 추가하는 경우 설치해주어야 한다npm install --save typescript @types/node @types/react @types/react-dom @types/jest  typescript타입스크립트 파일을 js파일로 컴파일할 수 있도록 만드는 컴파일러  @types/nodeno..."
+    } ,
+  
+    {
+      "title"    : "[Javascript] &amp;&amp;연산자와 optional chaining",
+      "title-lower"    : "[javascript] &amp;&amp;연산자와 optional chaining",
+      "sub-titile" : "",
+      "sub-titile-lower" : "",
+      "categories" : "JavaScript",
+      "tags"     : "React, Jest, javascript, Github, Git",
+      "url"      : "/javascript/2022/09/01/operator.html",
+      "date"     : "2022-09-01 00:00:00 +0900",
+      "content"     : "Type errorcan not read properties of undefined (reading map)난 optional chaining을 써서{  dnsInfo?.map((info) =&amp;gt; 뭐시기);}이렇게 코드를 썼는데{  dnsInfo &amp;amp;&amp;amp; dnsInfo.map((info) =&amp;gt; 뭐시기);..."
+    } ,
+  
+    {
       "title"    : "[Jest] Unit test 작성",
       "title-lower"    : "[jest] unit test 작성",
       "sub-titile" : "",
@@ -9,7 +69,7 @@
       "tags"     : "React, Jest, javascript, Github, Git",
       "url"      : "/jest/2022/07/18/test-code.html",
       "date"     : "2022-07-18 00:00:00 +0900",
-      "content"     : "dd"
+      "content"     : "test(&quot;test 설명&quot;, () =&amp;gt; {  expect(&quot;검증 대상&quot;).toXXX(&quot;기대 결과&quot;);});toXXX : Test MatchertoBe( ) : 기본형(primitive) 값을 비교할 때 사용npm test를 실행하면 프로젝트 내에 모든 테스트 파일을 찾아서 테스트를 실행..."
     } ,
   
     {
