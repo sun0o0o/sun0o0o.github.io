@@ -1,0 +1,36 @@
+I"�<p>react router dom의 hook useLocation만 써봤는데, useParams도 비슷한 역할을 하는 것 같다.</p>
+
+<h3 id="useparams">useParams</h3>
+
+<p>useParams 훅의 리턴값은 path parameter 정보를 담고있는 객체이다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{*: "monsteroffice/dashboard"}
+</code></pre></div></div>
+
+<center><img width="80%" alt="스크린샷 2022-10-14 오후 2 36 33" src="https://user-images.githubusercontent.com/85756211/212584726-0e01458a-81d3-4416-a02f-76b751fc294a.png" /></center>
+
+<p>왜 main/monsteroffice/dashboard가 아니고 monsteroffice/dashboard가 나오는거지?</p>
+
+<p>→ <code class="language-plaintext highlighter-rouge">&lt;Route path&gt;</code>에 작성해둔 url params가 나온다</p>
+
+<h3 id="uselocation">useLocation</h3>
+
+<p>useLocation 훅의 리턴값은 경로의 정보를 갖고있는 객체이다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+<span class="na">pathname</span><span class="p">:</span><span class="dl">'</span><span class="s1">/main/monsteroffice/dashboard</span><span class="dl">'</span><span class="p">,</span>
+<span class="na">search</span><span class="p">:</span><span class="dl">''</span><span class="p">,</span>
+<span class="na">hash</span><span class="p">:</span><span class="dl">''</span><span class="p">,</span>
+<span class="na">state</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+<span class="na">key</span><span class="p">:</span><span class="dl">"</span><span class="s2">pi4l2ra5</span><span class="dl">"</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>location 객체 내에 담긴 pathname: 현재 경로 값</p>
+
+<p>search: 현재 경로의 query parameter 값</p>
+
+<h3 id="참고">참고</h3>
+
+<p><a href="'https://reactrouter.com/en/main/hooks/use-navigate'">useNavigate</a></p>
+:ET

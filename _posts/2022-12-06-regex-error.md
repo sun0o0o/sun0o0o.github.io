@@ -9,7 +9,7 @@ tags:
   - [JavaScript]
 
 toc: true
-toc_sticky: true=
+toc_sticky: true
 date: 2022-12-06
 last_modified_at: 2022-12-06
 ---

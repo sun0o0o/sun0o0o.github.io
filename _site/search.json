@@ -1,6 +1,54 @@
 [
   
     {
+      "title"    : "[Selenium, Nodejs] 테스트 자동화 with Selenium",
+      "title-lower"    : "[selenium, nodejs] 테스트 자동화 with selenium",
+      "sub-titile" : "",
+      "sub-titile-lower" : "",
+      "categories" : "Selenium",
+      "tags"     : "Selenium, Nodejs, mocha",
+      "url"      : "/selenium/2022/12/23/selenium.html",
+      "date"     : "2022-12-23 00:00:00 +0900",
+      "content"     : "원래는 jest를 이용해서 유닛테스트 코드를 짜려고 했는데,코드를 다 짜고난 다음에, jest에서 코드가 돌아가게 하기 위해 개발이 끝났는데도 코드를 또 수정해야했다. 결국 jest가 아니라 selenium을 사용하기로 했다.Hello, Selenium 🤚🏻Selenium은 다양한 브라우저 및 플랫폼에서 웹 응용 프로그램을 위한 open source ..."
+    } ,
+  
+    {
+      "title"    : "[npm] npm과 npx",
+      "title-lower"    : "[npm] npm과 npx",
+      "sub-titile" : "",
+      "sub-titile-lower" : "",
+      "categories" : "npm",
+      "tags"     : "npm",
+      "url"      : "/npm/2022/12/20/npm-npx.html",
+      "date"     : "2022-12-20 00:00:00 +0900",
+      "content"     : "npm 정의Node Package Manager요.그게 뭔데요? Node.js에서 만들어진 모듈을 웹에서 받아서 설치하고 관리해주는 프로그램이요.글로벌 모듈은 혼란스럽다npm install 모듈이름 -g-g를 붙여주면 내 컴퓨터 안에 글로벌한 공간에 모듈을 설치해 프로젝트마다 같은 모듈을 공유해서 사용할 수 있다. (default인 npm instal..."
+    } ,
+  
+    {
+      "title"    : "[Babel] 바벨이 뭐에여",
+      "title-lower"    : "[babel] 바벨이 뭐에여",
+      "sub-titile" : "",
+      "sub-titile-lower" : "",
+      "categories" : "Babel",
+      "tags"     : "Babel",
+      "url"      : "/babel/2022/12/19/babel.html",
+      "date"     : "2022-12-19 00:00:00 +0900",
+      "content"     : "바벨이 무슨일을 하는데여?바벨은 자바스크립트 트랜스파일러이다.브라우저간의 호환성 문제를 해결하기 위해서 바벨을 사용한다.바벨은 새로운 문법이나 ts 혹은 jsx같은 언어들을 모든 브라우저에서 작동되는 es5(하위버전의) 자바스크립트로 변환해준다.바벨의 동작은 3단계로 구분된다.  파싱(Parsing): 코드를 읽고 구문 트리(AST)로 변환하는 단계 ..."
+    } ,
+  
+    {
+      "title"    : "[React] useLocation, useParams의 차이",
+      "title-lower"    : "[react] uselocation, useparams의 차이",
+      "sub-titile" : "",
+      "sub-titile-lower" : "",
+      "categories" : "React",
+      "tags"     : "React",
+      "url"      : "/react/2022/12/07/useLocation.html",
+      "date"     : "2022-12-07 00:00:00 +0900",
+      "content"     : "react router dom의 hook useLocation만 써봤는데, useParams도 비슷한 역할을 하는 것 같다.useParamsuseParams 훅의 리턴값은 path parameter 정보를 담고있는 객체이다.{*: &quot;monsteroffice/dashboard&quot;}왜 main/monsteroffice/dashboard가 ..."
+    } ,
+  
+    {
       "title"    : "[JavaScript] 정규표현식 test 결과 에러",
       "title-lower"    : "[javascript] 정규표현식 test 결과 에러",
       "sub-titile" : "",

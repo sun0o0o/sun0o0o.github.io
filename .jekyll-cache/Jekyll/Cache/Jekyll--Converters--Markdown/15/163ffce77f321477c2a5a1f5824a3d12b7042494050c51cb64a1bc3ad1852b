@@ -1,0 +1,9 @@
+I"�<p>react router dom의 hook useLocation만 써봤는데, useParams도 비슷한 역할을 하는 것 같다.</p>
+
+<h3 id="useparams">useParams</h3>
+
+<p>useParams 훅의 리턴값은 path parameter 정보를 담고있는 객체이다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{*: "monsteroffice/dashboard"}
+</code></pre></div></div>
+:ET

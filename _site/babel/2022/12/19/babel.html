@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<title>[Babel] 바벨이 뭐에여</title>
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>[Babel] 바벨이 뭐에여 | sun0o0o’s Tech Blog</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="[Babel] 바벨이 뭐에여" />
+<meta name="author" content="sun0o0o" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="바벨 넌 누구냐" />
+<meta property="og:description" content="바벨 넌 누구냐" />
+<link rel="canonical" href="http://localhost:4000/babel/2022/12/19/babel.html" />
+<meta property="og:url" content="http://localhost:4000/babel/2022/12/19/babel.html" />
+<meta property="og:site_name" content="sun0o0o’s Tech Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-12-19T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="[Babel] 바벨이 뭐에여" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"sun0o0o"},"dateModified":"2022-12-19T00:00:00+09:00","datePublished":"2022-12-19T00:00:00+09:00","description":"바벨 넌 누구냐","headline":"[Babel] 바벨이 뭐에여","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/babel/2022/12/19/babel.html"},"url":"http://localhost:4000/babel/2022/12/19/babel.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<script type="text/javascript" src="/assets/js/darkmode.js"></script>
+
+</head><body>
+  <main class="container">
+    <section class="about">
+      <div class="about-header condensed">
+      <div class="about-title">
+      <a href="/">
+        
+        <img src="/../assets/images/chunbae1.png" alt="sun0o0o" />
+        
+      </a>
+      <h2 id="title">
+        <a href="/">sun0o0o</a>
+      </h2>
+      </div><p class="tagline">Front-end Developer</p></div>
+      
+      <ul class="social about-footer condensed"><a href="https://github.com/sun0o0o" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a><a href="https://www.linkedin.com/in/samarsault" target="_blank">
+          <li>
+            <i class="icon-linkedin-squared"></i>
+          </li>
+        </a><a href="https://twitter.com/samarsault" target="_blank">
+          <li>
+            <i class="icon-twitter-squared"></i>
+          </li>
+        </a></ul><p class="about-footer condensed">&copy;
+        2023</p><div class="about-footer condensed">
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div>
+    </section>
+    <section class="content">
+      <div class="post-container">
+  <a class="post-link" href="/babel/2022/12/19/babel.html">
+    <h2 class="post-title">[Babel] 바벨이 뭐에여</h2>
+  </a>
+  <div class="post-meta">
+    <div class="post-date"><i class="icon-calendar"></i>Dec 19, 2022</div><ul class="post-categories"><li>Babel</li></ul></div>
+  <div class="post">
+    <h2 id="바벨이-무슨일을-하는데여">바벨이 무슨일을 하는데여?</h2>
+
+<p>바벨은 <strong>자바스크립트 트랜스파일러</strong>이다.</p>
+
+<p>브라우저간의 호환성 문제를 해결하기 위해서 바벨을 사용한다.</p>
+
+<p>바벨은 새로운 문법이나 ts 혹은 jsx같은 언어들을 모든 브라우저에서 작동되는 es5(하위버전의) 자바스크립트로 변환해준다.</p>
+
+<p>바벨의 동작은 3단계로 구분된다.</p>
+
+<ol>
+  <li>파싱(Parsing): 코드를 읽고 구문 트리(AST)로 변환하는 단계</li>
+  <li>변환(Transforming): 추상 구문 트리(AST)를 변경하는 단계</li>
+  <li>출력(Printing): 변경된 결과물을 출력하는 단계</li>
+</ol>
+
+<p>추상 구문 트리란 프로그램 내에서 발생하는 기능을 나타내기 위해 만들어진 구문 구조이다.</p>
+
+<p>바벨은 자바스크립트 코드를 받아서 AST를 만든다.</p>
+
+<p>그리고 그걸 활용하여 새로운 자바스크립트 코드를 출력한다.</p>
+
+<p>그렇다면 중간의 변환은 누가 담당할까? 바로 바벨 플러그인(plugin)이 담당한다. 플러그인은 어떤 코드를 어떻게 변환할지에 대한 규칙을 정의한다. 이러한 플러그인은 필요하다면 직접 만들어 쓸 수 있습니다. 그리고 플러그인들을 목적에 따라 묶어놓은 세트를 프리셋(preset)이라고 한다.</p>
+
+  </div></div>
+
+    </section>
+    <footer class="condensed">
+      <ul class="social about-footer condensed"><a href="https://github.com/sun0o0o" target="_blank">
+          <li>
+            <i class="icon-github-circled"></i>
+          </li>
+        </a><a href="https://www.linkedin.com/in/samarsault" target="_blank">
+          <li>
+            <i class="icon-linkedin-squared"></i>
+          </li>
+        </a><a href="https://twitter.com/samarsault" target="_blank">
+          <li>
+            <i class="icon-twitter-squared"></i>
+          </li>
+        </a></ul><p class="about-footer condensed">&copy;
+        2023</p><div class="about-footer condensed">
+        <p>Dark Mode
+          <i class="icon-moon"></i>
+          <label class="switch">
+            <input type="checkbox" class="dark-mode-toggle">
+            <span class="slider round" onclick="toggleDarkMode()"></span>
+          </label>
+        </p>
+      </div>
+    </footer>
+  </main>
+  
+  <script type="text/javascript" src="/assets/js/darkmode.js"></script>
+  
+  <script src="/assets/js/simple-jekyll-search.min.js"></script>
+  <script src="/assets/js/search.js"></script>
+  
+</body>
+
+</html>
