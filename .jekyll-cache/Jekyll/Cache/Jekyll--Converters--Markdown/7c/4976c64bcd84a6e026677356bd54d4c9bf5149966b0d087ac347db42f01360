@@ -1,82 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/style.css">
-<title>[Selenium, Nodejs] 테스트 자동화 with Selenium</title>
-<!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>[Selenium, Nodejs] 테스트 자동화 with Selenium | sun0o0o’s Tech Blog</title>
-<meta name="generator" content="Jekyll v4.2.2" />
-<meta property="og:title" content="[Selenium, Nodejs] 테스트 자동화 with Selenium" />
-<meta name="author" content="sun0o0o" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="테스트 자동화 with Selenium" />
-<meta property="og:description" content="테스트 자동화 with Selenium" />
-<link rel="canonical" href="http://localhost:4000/selenium/2022/12/23/selenium.html" />
-<meta property="og:url" content="http://localhost:4000/selenium/2022/12/23/selenium.html" />
-<meta property="og:site_name" content="sun0o0o’s Tech Blog" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-12-23T00:00:00+09:00" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="[Selenium, Nodejs] 테스트 자동화 with Selenium" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"sun0o0o"},"dateModified":"2022-12-23T00:00:00+09:00","datePublished":"2022-12-23T00:00:00+09:00","description":"테스트 자동화 with Selenium","headline":"[Selenium, Nodejs] 테스트 자동화 with Selenium","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/selenium/2022/12/23/selenium.html"},"url":"http://localhost:4000/selenium/2022/12/23/selenium.html"}</script>
-<!-- End Jekyll SEO tag -->
-
-
-<script type="text/javascript" src="/assets/js/darkmode.js"></script>
-
-</head><body>
-  <main class="container">
-    <section class="about">
-      <div class="about-header condensed">
-      <div class="about-title">
-      <a href="/">
-        
-        <img src="/../assets/images/chunbae1.png" alt="sun0o0o" />
-        
-      </a>
-      <h2 id="title">
-        <a href="/">sun0o0o</a>
-      </h2>
-      </div><p class="tagline">Front-end Developer</p></div>
-      
-      <ul class="social about-footer condensed"><a href="https://github.com/sun0o0o" target="_blank">
-          <li>
-            <i class="icon-github-circled"></i>
-          </li>
-        </a><a href="https://www.linkedin.com/in/samarsault" target="_blank">
-          <li>
-            <i class="icon-linkedin-squared"></i>
-          </li>
-        </a><a href="https://twitter.com/samarsault" target="_blank">
-          <li>
-            <i class="icon-twitter-squared"></i>
-          </li>
-        </a></ul><p class="about-footer condensed">&copy;
-        2023</p><div class="about-footer condensed">
-        <p>Dark Mode
-          <i class="icon-moon"></i>
-          <label class="switch">
-            <input type="checkbox" class="dark-mode-toggle">
-            <span class="slider round" onclick="toggleDarkMode()"></span>
-          </label>
-        </p>
-      </div>
-    </section>
-    <section class="content">
-      <div class="post-container">
-  <a class="post-link" href="/selenium/2022/12/23/selenium.html">
-    <h2 class="post-title">[Selenium, Nodejs] 테스트 자동화 with Selenium</h2>
-  </a>
-  <div class="post-meta">
-    <div class="post-date">
-      <i class="icon-calendar"></i>Dec 23, 2022
-    </div><ul class="post-categories"><li>Selenium</li></ul></div>
-  <div class="post"><p>원래는 jest를 이용해서 유닛테스트 코드를 짜려고 했는데,</p>
+I"8<p>원래는 jest를 이용해서 유닛테스트 코드를 짜려고 했는데,</p>
 
 <p>코드를 다 짜고난 다음에, jest에서 코드가 돌아가게 하기 위해 개발이 끝났는데도 코드를 또 수정해야했다. <br />
 결국 jest가 아니라 selenium을 사용하기로 했다.</p>
@@ -176,12 +98,19 @@ localhost에서 어떻게 selenium이 안돌아가는 2가지 문제가 있었�
     await anyOfficeNav.click();
 </code></pre></div></div>
 
-<p>일단 이 부분도 until.urlIs보다 <code class="language-plaintext highlighter-rouge">setTimeout</code>을 쓰는게 global option을 주는거라 더 대중적으로 사용하는 방법이다.</p>
+<p>일단 이 부분도 until.urlIs보다 setTimeout을 쓰는게 global option을 주는거라 더 대중적으로 사용하는 방법이다.</p>
 
 <h3 id="️왜-safari로-test가-돌아가지--왜-두번-돌아가지">⚠️ 왜 safari로 test가 돌아가지?! + 왜 두번 돌아가지?!</h3>
 
-<p>맥에는 기본적으로 safaridriver가 내장되어있다.
-윈도우 유저가 쓰는 코드처럼</p>
+<p>책임님이 터미널로 보셨는데 맥에는 기본적으로 safaridriver가 들어있다고 한다.</p>
+
+<p>난 드라이버 다운받아서 VScode로 위치를 옮겨주면 .exe인 실행파일로 안떴다. 그래서 크롬드라이버를 바탕화면에 두고 환경변수를 설정했었다.</p>
+
+<p>환경변수 위치를 mdp-system-management-fe로 옮겨줬는데도 드라이버 실행파일이 해당위치에 없어서 그런지 셀레니움이 작동하긴하는데(아마 기본내장되어있는 사파리 드라이버로 돌아가는것 같다) 테스트는 통과가 안된다.</p>
+
+<p>진ㅉㅏ 별짓 다해도 전혀 어디가 문제인지 1도 감이 안잡혀서 책임님 찬스를 받았다.</p>
+
+<p>mac OS에는 사파리드라이버가 기본적으로 깔려있는데 남들이 쓰는것처럼</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>driver = await new Builder()
          .forBrowser("chrome")
@@ -189,45 +118,6 @@ localhost에서 어떻게 selenium이 안돌아가는 2가지 문제가 있었�
            new chrome.Options().addArguments("--start-maximized")
          )
         .build();
+        ````
 </code></pre></div></div>
-
-<p>이렇게 쓰면 브라우저에 존재하는 모든 크롬드라이버를 찾아 헤치기 때문에</p>
-
-<p>내가깐 드라이버 + 기존에 깔려있는 드라이버 이렇게 총 2개가 찾아지는 것이었다… ㅇ←&lt;</p>
-</div></div>
-
-    </section>
-    <footer class="condensed">
-      <ul class="social about-footer condensed"><a href="https://github.com/sun0o0o" target="_blank">
-          <li>
-            <i class="icon-github-circled"></i>
-          </li>
-        </a><a href="https://www.linkedin.com/in/samarsault" target="_blank">
-          <li>
-            <i class="icon-linkedin-squared"></i>
-          </li>
-        </a><a href="https://twitter.com/samarsault" target="_blank">
-          <li>
-            <i class="icon-twitter-squared"></i>
-          </li>
-        </a></ul><p class="about-footer condensed">&copy;
-        2023</p><div class="about-footer condensed">
-        <p>Dark Mode
-          <i class="icon-moon"></i>
-          <label class="switch">
-            <input type="checkbox" class="dark-mode-toggle">
-            <span class="slider round" onclick="toggleDarkMode()"></span>
-          </label>
-        </p>
-      </div>
-    </footer>
-  </main>
-  
-  <script type="text/javascript" src="/assets/js/darkmode.js"></script>
-  
-  <script src="/assets/js/simple-jekyll-search.min.js"></script>
-  <script src="/assets/js/search.js"></script>
-  
-</body>
-
-</html>
+:ET
